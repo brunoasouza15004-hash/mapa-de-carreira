@@ -27,7 +27,7 @@ function SobreMim() {
     <section className='sobre'>
       <h2>Prazer em conhecer</h2>
       <p>
-        Futuro desenvolvedor Back-End em formação pelo Instituto PROA, com foco em construir sistemas eficientes e escaláveis. Possuo experiência prática no desenvolvimento de aplicações completas, utilizando Java, Spring Boot e MySQL no lado do servidor, além de criar interfaces dinâmicas com ReactJS. Sou entusiasta da cultura de colaboração e acredito que os melhores softwares nascem de discussões em equipe e troca de conhecimento.
+        Futuro desenvolvedor Back-End em formação pelo Instituto PROA, com foco em construir sistemas eficientes e escaláveis. Possuo experiência prática no desenvolvimento de aplicações completas, utilizando Java, Spring Boot e MySQL, além de criar interfaces dinâmicas com ReactJS. Sou entusiasta da cultura de colaboração e acredito que os melhores softwares nascem de discussões em equipe e troca de conhecimento.
       </p>
       <a href={curriculo}
          download={'Curriculo-Bruno-Aureliano-de-Souza.pdf'}
@@ -194,12 +194,7 @@ function Skills() {
           <p className="skill-grupo-titulo" style={{ marginTop: '1.25rem' }}>
             Do GitHub
           </p>
-          {Object.entries(linguagens)
-            .filter(([lang]) => lang !== 'CSS' && lang !== 'HTML') 
-            .sort((a, b) => b[1] - a[1])
-            .map(([lang, qtd]) => (
-              <SkillBar key={lang} nome={lang} porcentagem={calcularPct(qtd)} />
-            ))}
+         
         </>
       )}
     </section>
