@@ -30,7 +30,7 @@ function SobreMim() {
         Futuro desenvolvedor Back-End em formação pelo Instituto PROA, com foco em construir sistemas eficientes e escaláveis. Possuo experiência prática no desenvolvimento de aplicações completas, utilizando Java, Spring Boot e MySQL no lado do servidor, além de criar interfaces dinâmicas com ReactJS. Sou entusiasta da cultura de colaboração e acredito que os melhores softwares nascem de discussões em equipe e troca de conhecimento.
       </p>
       <a href={curriculo}
-         download={'Currículo-Bruno-Aureliano-de-Souza.pdf'}
+         download={'Curriculo-Bruno-Aureliano-de-Souza.pdf'}
          className='btn-cv' target='_blank' rel='noreferrer'>
          Baixar meu CV
     </a>
@@ -195,7 +195,6 @@ function Skills() {
             Do GitHub
           </p>
           {Object.entries(linguagens)
-            // FILTRO ADICIONADO AQUI:
             .filter(([lang]) => lang !== 'CSS' && lang !== 'HTML') 
             .sort((a, b) => b[1] - a[1])
             .map(([lang, qtd]) => (
@@ -208,8 +207,29 @@ function Skills() {
 }
 
 function App() {
+  // --- ADAPTAÇÃO VLIBRAS ---
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://vlibras.gov.br/app/vlibras-plugin.js';
+    script.async = true;
+    script.onload = () => {
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    };
+    document.body.appendChild(script);
+  }, []);
+  // -------------------------
+
   return (
     <div className='pagina'>
+      {/* --- DIVS OBRIGATÓRIAS VLIBRAS --- */}
+      <div vw="true" className="enabled">
+        <div vw-access-button="true" className="active"></div>
+        <div vw-plugin-wrapper="true">
+          <div className="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+      {/* --------------------------------- */}
+
       <div className='folha'>
         <Header />
         <div className='folha-corpo'>
